@@ -1,25 +1,9 @@
 # @NOTE: this compose file is intended to accompany the guide found in HOSTING.md
 version: '3.9'
 services:
-  caddy:
-    container_name: caddy
-    image: caddy:2
-    network_mode: host
-    depends_on:
-      - ozone
-    restart: unless-stopped
-    volumes:
-      - type: bind
-        source: /ozone/caddy/data
-        target: /data
-      - type: bind
-        source: /ozone/caddy/etc/caddy
-        target: /etc/caddy
-    labels:
-      - 'com.centurylinklabs.watchtower.enable=true'
   ozone:
     container_name: ozone
-    image: ghcr.io/bluesky-social/ozone:0.1
+    image: ghcr.io/scarnecchia/ozone:0.1
     network_mode: host
     restart: unless-stopped
     depends_on:

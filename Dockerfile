@@ -22,12 +22,12 @@ COPY --from=build /usr/src/ozone /usr/src/ozone
 RUN chown -R node:node .
 
 ENTRYPOINT ["dumb-init", "--"]
-EXPOSE 3000
-ENV OZONE_PORT=3000
+EXPOSE 3030
+ENV OZONE_PORT=3030
 ENV NODE_ENV=production
 USER node
 CMD ["node", "./service"]
 
-LABEL org.opencontainers.image.source=https://github.com/bluesky-social/ozone
+LABEL org.opencontainers.image.source=https://github.com/scarnecchia/ozone
 LABEL org.opencontainers.image.description="Ozone Moderation Service Web UI"
 LABEL org.opencontainers.image.licenses=MIT

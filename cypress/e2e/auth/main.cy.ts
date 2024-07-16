@@ -6,7 +6,7 @@ describe('Authentication', () => {
   let authFixture
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:3030')
     cy.fixture('auth.json').then((data) => (authFixture = data))
   })
 
